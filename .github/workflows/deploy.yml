@@ -26,4 +26,4 @@ jobs:
           ssh-keyscan -H $SFTP_HOST >> ~/.ssh/known_hosts
           ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no $SFTP_USERNAME@$SFTP_HOST "echo 'SSH connection successful'"
 
-          rsync -avz --delete --exclude=".git" ./ $SFTP_USERNAME@$SFTP_HOST:$SFTP_REMOTE_PATH
+          # rsync -avz --delete --exclude=".git" ./ $SFTP_USERNAME@$SFTP_HOST:$SFTP_REMOTE_PATH
