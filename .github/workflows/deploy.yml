@@ -24,6 +24,6 @@ jobs:
           echo "$SFTP_SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan -H $SFTP_HOST >> ~/.ssh/known_hosts
-          ssh -v $SFTP_USERNAME@SFTP_HOST
+          ssh -v $SFTP_USERNAME@$SFTP_HOST
 
           rsync -avz --delete --exclude=".git" ./ $SFTP_USERNAME@$SFTP_HOST:$SFTP_REMOTE_PATH
